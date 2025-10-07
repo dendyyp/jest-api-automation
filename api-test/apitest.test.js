@@ -1,11 +1,19 @@
 var supertest = require('supertest')
 const request = supertest('https://reqres.in')
 
+let headers = {};
+
+beforeAll(() => {
+    headers = {
+        'x-api-key': 'reqres-free-v1',
+        'Content-Type': 'application/json'
+    };
+});
+
 describe('Get Users', () => {
     it('should return users data', async () => {
         const response = await request
             .get('/api/users?page')
-            .set('x-api-key', 'reqres-free-v1')
             .set('Content-Type', 'application/json')
             .expect(200)
 
@@ -23,8 +31,8 @@ describe('Post New Users', () => {
 
         const response = await request
             .post('/api/users')
-            .set('x-api-key', 'reqres-free-v1')
             .set('Content-Type', 'application/json')
+            .set(headers)
             .send(body)
             .expect(201);
 
