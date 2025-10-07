@@ -1,0 +1,14 @@
+{
+  "name": "jeststart",
+  "version": "1.0.0",
+  "description": "api automation test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/jest"
+  },
+  "author": "dendyyp",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.1.3"
+  }
+}
