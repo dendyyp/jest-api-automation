@@ -14,6 +14,7 @@ describe('Get Users', () => {
     it('should return users data', async () => {
         const response = await request
             .get('/api/users?page')
+            .set(headers)
             .set('Content-Type', 'application/json')
             .expect(200)
 
